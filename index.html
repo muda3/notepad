@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <div class="input">
-        <textarea id="text" onkeyup="ShowLength(value);"></textarea>
+    <textarea id="text" onkeyup="ShowLength(value);"></textarea>
+    <p class="strcount"> 0</p>
+    <div class="button">
+        <button type="button" class="btn btn-primary" id="save">保存</button>
+        <button type="button" class="btn btn-primary" id="load">読み込み</button>
     </div>
-    <p id="strcount">0</p>
-    <button type="button" class="btn btn-primary">保存</button> <button type="button"
-        class="btn btn-primary">読み込み</button>
 
     <script src="str.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
