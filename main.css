@@ -1,0 +1,8 @@
+textarea {
+    width: 98vw;
+    height: 92vh;
+    resize: none
+}
+btn-primary {
+    float: right;
+}
