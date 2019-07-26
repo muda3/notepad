@@ -1,3 +1,3 @@
 function ShowLength(str) {
-    document.getElementById("strcount").innerHTML = str.length + "";
+    document.getElementById("strcount").innerHTML = str.Length + "";
 }

@@ -14,9 +14,11 @@ app.on("ready", function () {
     // ブラウザ(Chromium)の起動, 初期画面のロード
     mainWindow = new BrowserWindow({ width: 890, height: 1000 });
     mainWindow.loadURL("file://" + __dirname + "/index.html");
-    //loadDevtool(loadDevtool.REDUX_DEVTOOLS);
-    //mainWindow.openDevTools();
+    //ブラウザの開発者ツールを起動
+    loadDevtool(loadDevtool.REDUX_DEVTOOLS);
+    mainWindow.openDevTools();
     mainWindow.on("closed", function () {
         mainWindow = null;
     });
 });
+
