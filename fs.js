@@ -1,4 +1,4 @@
-function SaveFile() {
+window.onload = function Save() {
     const { BrowserWindow, dialog } = require('electron').remote
     const win = BrowserWindow.getFocusedWindow();
     dialog.ShowOpenDialog(
