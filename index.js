@@ -1,19 +1,30 @@
-const electron = require("electron");
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-let mainWindow = null;
+const { app, BrowserWindow } = require('electron')
+let win
+function createWindow() {
+    win = new BrowserWindow({
+        width: 890,
+        height: 1000,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    })
 
-app.on("window-all-closed", function () {
-    if (process.platform !== "darwin") {
-        app.quit();
+    win.loadFile('index.html')
+    win.webContents.openDevTools()
+    win.on('closed', () => {
+        win = null
+    })
+}
+
+app.on('ready', createWindow)
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit()
     }
-});
+})
 
-app.on("ready", function () {
-    mainWindow = new BrowserWindow({ width: 890, height: 1000 });
-    mainWindow.loadURL("file://" + __dirname + "/index.html");
-    mainWindow.openDevTools();
-    mainWindow.on("closed", function () {
-        mainWindow = null;
-    });
-});
+app.on('activate', () => {
+    if (win === null) {
+        createWindow()
+    }
+})
