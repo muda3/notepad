@@ -1,4 +1,4 @@
-function Save() {
+function Open() {
     const dialog = require('electron').remote.dialog;
     const filenames = dialog.showOpenDialog(null, {
         properties: ['openFile'],
@@ -8,4 +8,16 @@ function Save() {
             { name: 'text file', extensions: ['txt'] }
         ]
     });
+}
+
+function Save() {
+    const dialog = require('electron').remote.dialog;
+    const filename = dialog.showSaveDialog(null, {
+        options: {
+            title: 'select text file',
+            filters: [
+                { name: 'text file', extensions: ['txt'] }
+            ]
+        }
+    })
 }
