@@ -23,7 +23,7 @@ function Save() {
     }, (filenames) => {
         const fs = require('fs');
         const data = document.getElementById("text").value;
-        const ntsavefile = new Blob([data], { type: 'text/plain' });
+        //const ntsavefile = new Blob([data], { type: 'text/plain' });
         fs.writeFile(filenames, data, function (err, result) {
             if (err) console.log(err);
         });
