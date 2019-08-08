@@ -20,9 +20,12 @@ function Save() {
         filters: [
             { name: 'Document', extensions: ['txt'] }
         ]
-    }, filePaths => {
-        const fs = require('fs')
-        const savefile = document.getElementById("text").value;
-        const ntsavefile = new Blob([savefile], { type: 'text/plain' });
+    }, (filenames) => {
+        const fs = require('fs');
+        const data = document.getElementById("text").value;
+        const ntsavefile = new Blob([data], { type: 'text/plain' });
+        fs.writeFile(filenames, data, function (err, result) {
+            if (err) console.log(err);
+        });
     });
 };
