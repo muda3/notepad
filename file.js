@@ -13,7 +13,9 @@ function Open() {
         ]
     }, (filenames) => {
         if (filenames) {
+            console.log(filenames);
             readFile(filenames[0]);
+
         }
     });
 }
@@ -22,7 +24,7 @@ function readFile(path) {
     const input = document.getElementById('text');
     fs.readFile(path, (error, data) => {
         if (error) console.log(error);
-        input.textContent = data.toString();
+        input.value = data.toString();
     });
 };
 
