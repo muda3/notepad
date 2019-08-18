@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/muda3/notepad/issues"
   },
-  "homepage": "https://github.com/muda3/notepad#readme"
+  "homepage": "https://github.com/muda3/notepad#readme",
+  "dependencies": {
+    "about-window": "^1.13.1"
+  }
 }
