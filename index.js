@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, systemPreferences } = require('electron')
 let win
 function createWindow() {
     win = new BrowserWindow({
@@ -8,9 +8,14 @@ function createWindow() {
             nodeIntegration: true
         }
     })
-
+    systemPreferences.subscribeNotification(
+        'AppleInterfaceThemeChangedNotification',
+        function theThemeHasChanged() {
+            updateMyAppTheme(systemPreferences.isDarkMode())
+        }
+    )
     win.loadFile('index.html')
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
     win.on('closed', () => {
         win = null
     })
