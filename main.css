@@ -1,17 +1,24 @@
 textarea {
-    width: 100%;
-    height: 90vh;
-    resize: none!important;
-    border: none;
-    border-radius: 0
-    
+  width: 100%;
+  height: 90vh;
+  resize: none !important;
+  border: none;
+  border-radius: 0;
+  background-color: #0c0c25;
+  color: #dcdcdf;
 }
 
 #inputcount {
-    margin: 10px;
-    text-align: right
+  margin: 10px;
+  text-align: right;
+  color: #dcdcdf;
 }
-.button{
-    text-align: right;
-    margin: 10px
+
+.button {
+  text-align: right;
+  margin: 10px;
+}
+
+.all {
+  background-color: #08071c;
 }
