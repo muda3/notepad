@@ -1,13 +1,20 @@
 const { app, BrowserWindow, systemPreferences } = require("electron");
+
 let win;
 function createWindow() {
   win = new BrowserWindow({
     width: 890,
     height: 1000,
+    transparent: false,
+    backgroundColor: '#0c0c25',
+
+    //titleBarStyle: "hiddenInset",
+    //resizable: false,
     webPreferences: {
       nodeIntegration: true
     }
   });
+
   systemPreferences.subscribeNotification(
     "AppleInterfaceThemeChangedNotification",
     function theThemeHasChanged() {
@@ -15,7 +22,6 @@ function createWindow() {
     }
   );
   win.loadFile("index.html");
-  win.webContents.openDevTools();
   win.on("closed", () => {
     win = null;
   });
