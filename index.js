@@ -6,7 +6,7 @@ function createWindow() {
     width: 890,
     height: 1000,
     transparent: false,
-    backgroundColor: '#0c0c25',
+    backgroundColor: "#0c0c25",
 
     //titleBarStyle: "hiddenInset",
     //resizable: false,
@@ -15,12 +15,6 @@ function createWindow() {
     }
   });
 
-  systemPreferences.subscribeNotification(
-    "AppleInterfaceThemeChangedNotification",
-    function theThemeHasChanged() {
-      updateMyAppTheme(systemPreferences.isDarkMode());
-    }
-  );
   win.loadFile("index.html");
   win.on("closed", () => {
     win = null;
